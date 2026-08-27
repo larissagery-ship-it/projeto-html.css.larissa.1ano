@@ -7,8 +7,8 @@
 }
 
 body {
-    background-color: #d63232;
-    color: #d526bb;
+    background-color: #88b6d4;
+    color: #e9d9e7;
     line-height: 1.6;
 }
 
@@ -17,6 +17,7 @@ body {
     text-align: center;
     padding: 60px 20px;
     background: linear-gradient(135deg, #4f46e5, #06b6d4);
+    margin: 5px solid #d12222;
 }
 
 .profile-img {
