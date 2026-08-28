@@ -19,6 +19,7 @@ body {
   background: linear-gradient(135deg, #4f46e5, #06b6d4);
   color: #ffffff;
   margin-bottom: 30px;
+  border: 5px solid #cf1010;
 
 }
 /* Header / Hero com moldura vermelha em volta */
