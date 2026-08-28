@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio Criativo</title>
-    
+
     <style>
         /* Configurações Gerais */
         * {
@@ -44,10 +45,14 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 0 20px 40px 20px;
-            display: flex;
             flex-direction: column;
             gap: 20px;
         }
+        article{ 
+            display: flex;
+
+        }
+    
 
         /* Cartões (Cards) */
         .card {
@@ -157,6 +162,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <!-- Cabeçalho / Banner -->
@@ -171,40 +177,52 @@
         <section class="card">
             <h2>🚀 Sobre Mim</h2>
             <p>
-                Amo resolver problemas através do código e estou construindo minha jornada no desenvolvimento web front-end.
+                Amo resolver problemas através do código e estou construindo minha jornada no desenvolvimento web
+                front-end.
             </p>
         </section>
+        <article>
+            <section class="card interact-section">
+                 <h2>✨ Interatividade</h2>
+                 <p>Clique no botão abaixo para ver uma mágica acontecer!</p>
+                 <button id="btn-fun">CLIQUE!</button>
+                 <p id="mensagem" class="hidden">🎉 Você descobriu a mágica!</p>
+             </section>
+     
+             <section class="card">
+                 <h2>Meu primeiro post</h2>
+                 <p class="artigo-autor">Por: lari🎀✨</p>
+                 <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de tecnologia.</p>
+                 
+                 <!-- Botões organizados com a classe btn-reacao -->
+                 <button class="btn-reacao">❤️ <span>0</span></button>
+                 <button class="btn-reacao">🎉​ <span>0</span></button>
+                 <button class="btn-reacao">👍 <span>0</span></button>
+             </section>
 
-        <!-- Adicionada a classe img-blog para pegar os estilos do CSS -->
-        <img class="img-blog" src="imagem-blog.png" alt="Logotipo conceitual para blog de tecnologia e educação.">
+            </article>
+            <article>
+            <section class="card interact-section">
+                <h2>✨ Interatividade</h2>
+                <p>Clique no botão abaixo para ver uma mágica acontecer!</p>
+                <button id="btn-fun">CLIQUE!</button>
+                <p id="mensagem" class="hidden">🎉 Você descobriu a mágica!</p>
+            </section>
+    
+            <section class="card">
+                <h2>Meu segundo post</h2>
+                <p class="artigo-autor">Por: lari🎀✨</p>
+                <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de
+                    tecnologia.</p>
+    
+                <!-- Botões organizados com a classe btn-reacao -->
+                <button class="btn-reacao">❤️ <span>0</span></button>
+                <button class="btn-reacao">🎉​ <span>0</span></button>
+                <button class="btn-reacao">👍 <span>0</span></button>
+            </section>
 
-        <section class="card">
-            <h2>🛠️ Minhas Habilidades</h2>
-            <div class="skills-tags">
-                <span class="tag">HTML5</span>
-                <span class="tag">CSS3</span>
-                <span class="tag">JavaScript</span>
-                <span class="tag">Git & GitHub</span>
-            </div>
-        </section>
+        </article>
 
-        <section class="card interact-section">
-            <h2>✨ Interatividade</h2>
-            <p>Clique no botão abaixo para ver uma mágica acontecer!</p>
-            <button id="btn-fun">CLIQUE!</button>
-            <p id="mensagem" class="hidden">🎉 Você descobriu a mágica!</p>
-        </section>
-
-        <section class="card">
-            <h2>Meu primeiro post</h2>
-            <p class="artigo-autor">Por: lari🎀✨</p>
-            <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de tecnologia.</p>
-            
-            <!-- Botões organizados com a classe btn-reacao -->
-            <button class="btn-reacao">❤️ <span>0</span></button>
-            <button class="btn-reacao">🎉​ <span>0</span></button>
-            <button class="btn-reacao">👍 <span>0</span></button>
-        </section>
 
     </main>
 
@@ -218,8 +236,8 @@
         // 1. Lógica dos Botões de Reação
         const botoesReacao = document.querySelectorAll(".btn-reacao");
 
-        botoesReacao.forEach(function(botao) {
-            botao.addEventListener("click", function() {
+        botoesReacao.forEach(function (botao) {
+            botao.addEventListener("click", function () {
                 let texto = botao.querySelector("span");
                 texto.textContent = Number(texto.textContent) + 1;
             });
@@ -229,9 +247,10 @@
         const btnFun = document.querySelector("#btn-fun");
         const mensagem = document.querySelector("#mensagem");
 
-        btnFun.addEventListener("click", function() {
+        btnFun.addEventListener("click", function () {
             mensagem.classList.toggle("hidden");
         });
     </script>
 </body>
+
 </html>
