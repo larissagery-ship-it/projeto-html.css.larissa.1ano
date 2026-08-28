@@ -1,168 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio Criativo</title>
-
-    <style>
-        /* Configurações Gerais */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: #0f172a;
-            color: #f8fafc;
-            line-height: 1.6;
-        }
-
-        /* Header / Hero */
-        .hero {
-            text-align: center;
-            padding: 60px 20px;
-            background: linear-gradient(135deg, #4f46e5, #06b6d4);
-            color: #ffffff;
-            margin-bottom: 30px;
-        }
-
-        .hero h1 {
-            font-size: 2.2rem;
-            margin-bottom: 8px;
-        }
-
-        .subtitle {
-            font-size: 1.1rem;
-            opacity: 0.95;
-        }
-
-        /* Conteúdo Principal */
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px 40px 20px;
-            flex-direction: column;
-            gap: 20px;
-        }
-        article{ 
-            display: flex;
-
-        }
-    
-
-        /* Cartões (Cards) */
-        .card {
-            background-color: #1e293b;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
-        }
-
-        .card h2 {
-            color: #38bdf8;
-            margin-bottom: 12px;
-            font-size: 1.4rem;
-        }
-
-        .card p {
-            color: #cbd5e1;
-        }
-
-        /* Imagem do Blog */
-        .img-blog {
-            width: 100%;
-            max-width: 100%;
-            height: auto;
-            border-radius: 12px;
-            object-fit: cover;
-        }
-
-        /* Autor do Artigo */
-        .artigo-autor {
-            font-weight: bold;
-            color: #38bdf8 !important;
-            margin-bottom: 8px;
-        }
-
-        /* Tags de Habilidades */
-        .skills-tags {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-top: 10px;
-        }
-
-        .tag {
-            background-color: #334155;
-            color: #38bdf8;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 0.9rem;
-        }
-
-        /* Botões e Interação */
-        button {
-            background-color: #38bdf8;
-            color: #0f172a;
-            border: none;
-            padding: 10px 20px;
-            font-size: 1rem;
-            font-weight: bold;
-            border-radius: 8px;
-            cursor: pointer;
-            margin-top: 12px;
-            margin-right: 8px;
-            transition: transform 0.2s, background-color 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        button:hover {
-            background-color: #7dd3fc;
-            transform: scale(1.03);
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        #mensagem {
-            margin-top: 15px;
-            font-weight: bold;
-            color: #4ade80;
-        }
-
-        /* Rodapé */
-        footer {
-            text-align: center;
-            padding: 30px;
-            color: #94a3b8;
-            background-color: #0f172a;
-            border-top: 1px solid #1e293b;
-        }
-
-        footer a {
-            color: #38bdf8;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        .copy {
-            font-size: 0.85rem;
-            margin-top: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
     <!-- Cabeçalho / Banner -->
@@ -174,83 +17,65 @@
     <!-- Conteúdo Principal -->
     <main class="container">
 
+        <!-- Seção Sobre Mim -->
         <section class="card">
             <h2>🚀 Sobre Mim</h2>
             <p>
-                Amo resolver problemas através do código e estou construindo minha jornada no desenvolvimento web
-                front-end.
+                Amo resolver problemas através do código e estou construindo minha jornada no desenvolvimento web front-end.
             </p>
         </section>
-        <article>
-            <section class="card interact-section">
-                 <h2>✨ Interatividade</h2>
-                 <p>Clique no botão abaixo para ver uma mágica acontecer!</p>
-                 <button id="btn-fun">CLIQUE!</button>
-                 <p id="mensagem" class="hidden">🎉 Você descobriu a mágica!</p>
-             </section>
-     
-             <section class="card">
-                 <h2>Meu primeiro post</h2>
-                 <p class="artigo-autor">Por: lari🎀✨</p>
-                 <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de tecnologia.</p>
-                 
-                 <!-- Botões organizados com a classe btn-reacao -->
-                 <button class="btn-reacao">❤️ <span>0</span></button>
-                 <button class="btn-reacao">🎉​ <span>0</span></button>
-                 <button class="btn-reacao">👍 <span>0</span></button>
-             </section>
 
-            </article>
-            <article>
+        <!-- Post 1 -->
+        <article>
             <section class="card interact-section">
                 <h2>✨ Interatividade</h2>
                 <p>Clique no botão abaixo para ver uma mágica acontecer!</p>
-                <button id="btn-fun">CLIQUE!</button>
-                <p id="mensagem" class="hidden">🎉 Você descobriu a mágica!</p>
+                <button class="btn-fun">CLIQUE!</button>
+                <p class="mensagem-magica hidden">🎉 Você descobriu a mágica!</p>
             </section>
-    
+
+            <section class="card">
+                <h2>Meu primeiro post</h2>
+                <p class="artigo-autor">Por: lari🎀✨</p>
+                <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de tecnologia.</p>
+                
+                <!-- Botões de Reação -->
+                <button class="btn-reacao">❤️ <span>0</span></button>
+                <button class="btn-reacao">🎉 <span>0</span></button>
+                <button class="btn-reacao">👍 <span>0</span></button>
+            </section>
+        </article>
+
+        <!-- Post 2 -->
+        <article>
+            <section class="card interact-section">
+                <h2>✨ Interatividade</h2>
+                <p>Clique no botão abaixo para ver uma mágica acontecer!</p>
+                <button class="btn-fun">CLIQUE!</button>
+                <p class="mensagem-magica hidden">🎉 Você é inteligente!</p>
+            </section>
+
             <section class="card">
                 <h2>Meu segundo post</h2>
                 <p class="artigo-autor">Por: lari🎀✨</p>
-                <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de
-                    tecnologia.</p>
-    
-                <!-- Botões organizados com a classe btn-reacao -->
+                <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de tecnologia.</p>
+
+                <!-- Botões de Reação -->
                 <button class="btn-reacao">❤️ <span>0</span></button>
-                <button class="btn-reacao">🎉​ <span>0</span></button>
+                <button class="btn-reacao">🎉 <span>0</span></button>
                 <button class="btn-reacao">👍 <span>0</span></button>
             </section>
-
         </article>
-
 
     </main>
 
+    <!-- Rodapé -->
     <footer>
         <p>Criado com carinho por <a href="#">Lari</a></p>
         <p class="copy">&copy; 2026 - Todos os direitos reservados.</p>
     </footer>
 
-    <!-- Lógica JavaScript -->
-    <script>
-        // 1. Lógica dos Botões de Reação
-        const botoesReacao = document.querySelectorAll(".btn-reacao");
-
-        botoesReacao.forEach(function (botao) {
-            botao.addEventListener("click", function () {
-                let texto = botao.querySelector("span");
-                texto.textContent = Number(texto.textContent) + 1;
-            });
-        });
-
-        // 2. Lógica do Botão de Mágica (#btn-fun)
-        const btnFun = document.querySelector("#btn-fun");
-        const mensagem = document.querySelector("#mensagem");
-
-        btnFun.addEventListener("click", function () {
-            mensagem.classList.toggle("hidden");
-        });
-    </script>
+    <!-- Arquivo JavaScript -->
+    <script src="script.js"></script>
 </body>
-
 </html>

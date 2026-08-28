@@ -1,8 +1,8 @@
 // 1. Lógica para os Botões de Reação (Curtidas)
 const botoesReacao = document.querySelectorAll(".btn-reacao");
 
-botoesReacao.forEach(function(botao) {
-    botao.addEventListener("click", function() {
+botoesReacao.forEach(function (botao) {
+    botao.addEventListener("click", function () {
         let texto = botao.querySelector("span");
         texto.textContent = Number(texto.textContent) + 1;
     });
@@ -12,6 +12,8 @@ botoesReacao.forEach(function(botao) {
 const btnFun = document.querySelector("#btn-fun");
 const mensagem = document.querySelector("#mensagem");
 
-btnFun.addEventListener("click", function() {
-    mensagem.classList.toggle("hidden");
-});
+if (btnFun && mensagem) {
+    btnFun.addEventListener("click", function () {
+        mensagem.classList.toggle("hidden");
+    });
+}
