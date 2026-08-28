@@ -1,28 +1,27 @@
 document.addEventListener("DOMContentLoaded", function () {
     console.log("JavaScript carregado com sucesso!");
 
-    const botoes = document.querySelectorAll(".btn-reacao");
+    // Seleciona todos os botões de reação (coração e joinha)
+    const botoes = document.querySelectorAll("button"); // Alterado para selecionar todos os botões, como no exemplo da aula
     console.log("Quantidade de botões encontrados:", botoes.length);
 
     botoes.forEach(function (botao) {
-        let curtiu = false;
+        let curtiu = false; // Variável para controlar se o botão já foi clicado
 
-        botao.addEventListener("click", function () {
-            const span = botao.querySelector("span");
-            
-            if (!span) {
-                console.error("Não foi encontrada a tag <span> dentro do botão!");
-                return;
-            }
+        // Adiciona um ouvinte de evento de clique a cada botão
+        botao.addEventListener("click", function () { // Usamos uma função anônima aqui, mas a função nomeada 'botaoClicado' também funciona
+            console.log("Botão clicado!");
 
-            let valor = parseInt(span.innerText) || 0;
+            // Seleciona o span dentro do botão para atualizar o contador
+            let texto = botao.querySelector("span");
 
-            if (!curtiu) {
-                span.innerText = valor + 1;
-                curtiu = true;
-            } else {
-                span.innerText = valor - 1;
-                curtiu = false;
+            // Verifica se o botão já foi curtido
+            if (curtiu === false) { // Se ainda não curtiu
+                texto.textContent++; // Incrementa o contador
+                curtiu = true;       // Marca como curtido
+            } else {                 // Se já curtiu (e clicou novamente para descurtir)
+                texto.textContent--; // Decrementa o contador
+                curtiu = false;      // Marca como não curtido
             }
         });
     });
