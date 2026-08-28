@@ -1,0 +1,8 @@
+const botaoCurtir = document.querySelector("#btn-curtir");
+
+function botaoClicado() {
+    let texto = botaoCurtir.querySelector("span");
+    texto.textContent = Number(texto.textContent) + 1;
+}
+
+botaoCurtir.addEventListener("click", botaoClicado);
