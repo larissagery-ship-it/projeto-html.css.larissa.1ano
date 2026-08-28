@@ -1,34 +1,39 @@
-// --- Lógica das Reações (Curtir / Descurtir) ---
-const botoesReacao = document.querySelectorAll(".btn-reacao");
+// Aguarda o HTML carregar completamente antes de rodar o script
+document.addEventListener("DOMContentLoaded", function () {
 
-botoesReacao.forEach(function (botao) {
-    let curtiu = false; // Cada botão tem seu próprio controle do estado
+    // --- Lógica das Reações (Curtir / Descurtir) ---
+    const botoesReacao = document.querySelectorAll(".btn-reacao");
 
-    botao.addEventListener("click", function () {
-        let span = botao.querySelector("span");
-        let valorAtual = parseInt(span.textContent);
+    botoesReacao.forEach(function (botao) {
+        let curtiu = false;
 
-        if (!curtiu) {
-            span.textContent = valorAtual + 1;
-            curtiu = true;
-            botao.classList.add("ativo"); // Opcional: para estilizar quando curtido
-        } else {
-            span.textContent = valorAtual - 1;
-            curtiu = false;
-            botao.classList.remove("ativo");
-        }
+        botao.addEventListener("click", function () {
+            const span = botao.querySelector("span");
+            let contador = Number(span.textContent);
+
+            if (!curtiu) {
+                span.textContent = contador + 1;
+                curtiu = true;
+            } else {
+                span.textContent = contador - 1;
+                curtiu = false;
+            }
+        });
     });
-});
 
-// --- Lógica dos Botões de Mágica (Interatividade) ---
-const botoesFun = document.querySelectorAll(".btn-fun");
+    // --- Lógica dos Botões de Interatividade (Mágica) ---
+    const botoesFun = document.querySelectorAll(".btn-fun");
 
-botoesFun.forEach(function (botao) {
-    botao.addEventListener("click", function () {
-        // Encontra o card pai e depois a mensagem mágica dentro dele
-        const card = botao.closest(".interact-section");
-        const mensagem = card.querySelector(".mensagem-magica");
-        
-        mensagem.classList.toggle("hidden");
+    botoesFun.forEach(function (botao) {
+        botao.addEventListener("click", function () {
+            // Pega o elemento com a mensagem que está no mesmo bloco do botão
+            const secao = botao.parentElement;
+            const mensagem = secao.querySelector(".mensagem-magica");
+
+            if (mensagem) {
+                mensagem.classList.toggle("hidden");
+            }
+        });
     });
+
 });
