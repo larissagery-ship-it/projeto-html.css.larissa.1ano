@@ -26,6 +26,7 @@
                     width= 80px;
                     height=80PX;
                 }
+
                 <header>
 <h1>Meu blog tech</h1>
 <p>Vou compartilhar conhecimentos sobre tecnologia e programação</p>
@@ -51,6 +52,17 @@
             <button id="btn-fun">CLIQUE!</button>
             <p id="mensagem" class="hidden"></p>
         </section>
+        <button>❤️<span>0</span></button>
+        <script>
+        const botao = document.querySelector("button");
+botao.addEventListener("click", botaoClicado);
+
+
+</script>
+function botaoClicado() {
+let texto = botao.querySelector("span");
+texto.textContent++;
+}
 
     </main>
 main {
