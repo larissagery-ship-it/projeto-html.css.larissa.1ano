@@ -1,39 +1,29 @@
-// Aguarda o HTML carregar completamente antes de rodar o script
 document.addEventListener("DOMContentLoaded", function () {
+    console.log("JavaScript carregado com sucesso!");
 
-    // --- Lógica das Reações (Curtir / Descurtir) ---
-    const botoesReacao = document.querySelectorAll(".btn-reacao");
+    const botoes = document.querySelectorAll(".btn-reacao");
+    console.log("Quantidade de botões encontrados:", botoes.length);
 
-    botoesReacao.forEach(function (botao) {
+    botoes.forEach(function (botao) {
         let curtiu = false;
 
         botao.addEventListener("click", function () {
             const span = botao.querySelector("span");
-            let contador = Number(span.textContent);
+            
+            if (!span) {
+                console.error("Não foi encontrada a tag <span> dentro do botão!");
+                return;
+            }
+
+            let valor = parseInt(span.innerText) || 0;
 
             if (!curtiu) {
-                span.textContent = contador + 1;
+                span.innerText = valor + 1;
                 curtiu = true;
             } else {
-                span.textContent = contador - 1;
+                span.innerText = valor - 1;
                 curtiu = false;
             }
         });
     });
-
-    // --- Lógica dos Botões de Interatividade (Mágica) ---
-    const botoesFun = document.querySelectorAll(".btn-fun");
-
-    botoesFun.forEach(function (botao) {
-        botao.addEventListener("click", function () {
-            // Pega o elemento com a mensagem que está no mesmo bloco do botão
-            const secao = botao.parentElement;
-            const mensagem = secao.querySelector(".mensagem-magica");
-
-            if (mensagem) {
-                mensagem.classList.toggle("hidden");
-            }
-        });
-    });
-
 });
