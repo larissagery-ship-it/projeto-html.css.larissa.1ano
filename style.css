@@ -19,6 +19,19 @@ body {
   background: linear-gradient(135deg, #4f46e5, #06b6d4);
   color: #ffffff;
   margin-bottom: 30px;
+
+}
+/* Header / Hero com moldura vermelha em volta */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #4f46e5, #06b6d4);
+    color: #ffffff;
+    margin-bottom: 30px;
+    
+    /* Moldura vermelha ao redor do bloco azul */
+    border: 4px solid #ff0000;
+    border-radius: 12px; /* Deixa as pontas da moldura levemente arredondadas */
 }
 
 .hero h1 {
