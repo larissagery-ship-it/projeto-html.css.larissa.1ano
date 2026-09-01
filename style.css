@@ -252,3 +252,11 @@ function mudaTema() {
         corpoPagina.classList.add("tema-escuro");
     }
 }
+/* Estilo específico para o botão quando o tema escuro estiver ativo */
+.tema-escuro .btn-tema-escuro {
+    background-color: var(--cor-secundaria);
+}
+/* O asterisco aplica a regra a todos os elementos do site */
+* {
+    transition: background-color 0.3s ease;
+}
