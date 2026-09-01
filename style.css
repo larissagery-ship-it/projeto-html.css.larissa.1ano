@@ -20,6 +20,7 @@
     --cor-texto: #ffffff;
     --cor-contraste: #f3eef7;
     --cor-card-fundo: #1e293b;
+    --cor-secundaria: #38bdf8;
 }
 
 /* ===================================
@@ -30,6 +31,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: var(--fonte-texto);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body {
@@ -92,7 +94,7 @@ article {
     background: linear-gradient(135deg, #4f46e5, #06b6d4);
     color: #ffffff;
     margin-bottom: 30px;
-    border: 4px solid #ff0000; /* Moldura vermelha */
+    border: 4px solid #ff0000;
     border-radius: 12px;
 }
 
@@ -188,6 +190,27 @@ button:hover {
     transform: scale(1.03);
 }
 
+/* Botão Flutuante de Mudar Tema */
+.btn-tema-escuro {
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    font-size: 24px;
+    padding: 12px;
+    background-color: var(--cor-primaria);
+    color: #ffffff;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.tema-escuro .btn-tema-escuro {
+    background-color: var(--cor-secundaria);
+    color: #0f172a;
+}
+
 .hidden {
     display: none;
 }
@@ -221,42 +244,4 @@ footer a:hover {
 .copy {
     font-size: 0.85rem;
     margin-top: 10px;
-}
-<main>
-    <!-- ... outros artigos ... -->
-
-<button class="btn-tema-escuro">��</button>
-</main>
-.btn-tema-escuro {
-position: fixed;
-}
-.btn-tema-escuro {
-    position: fixed;
-    bottom: 16px; /* Distância da borda de baixo */
-    right: 16px;  /* Distância da borda da direita */
-    font-size: 32px; /* Tamanho do emoji */
-    padding: 12px;   /* Espaço interno entre o emoji e a borda */
-    background-color: var(--cor-primaria); /* Cor de fundo usando nossa variável */
-    border-radius: 50%; /* Deixa o botão perfeitamente redondo */
-    border: none; /* Remove a borda padrão do botão */
-    cursor: pointer; /* Muda o mouse para a "mãozinha" ao passar por cima */
-}
-const btnTemaEscuro;
-btnTemaEscuro.addEventListener("click", mudaTema);
-function mudaTema() {
-    const corpoPagina = document.body;
-
-    if (corpoPagina.classList.contains("tema-escuro")) {
-        corpoPagina.classList.remove("tema-escuro");
-    } else {
-        corpoPagina.classList.add("tema-escuro");
-    }
-}
-/* Estilo específico para o botão quando o tema escuro estiver ativo */
-.tema-escuro .btn-tema-escuro {
-    background-color: var(--cor-secundaria);
-}
-/* O asterisco aplica a regra a todos os elementos do site */
-* {
-    transition: background-color 0.3s ease;
 }
