@@ -10,7 +10,7 @@
 
     <!-- Cabeçalho / Banner -->
     <header class="hero">
-        <h1>Olá, meu blog tech </h1>
+        <h1>Olá, meu blog tech</h1>
         <p class="subtitle">Desenvolvedor Web em Formação & Entusiasta de Tecnologia</p>
     </header>
 
@@ -19,51 +19,68 @@
 
         <!-- Seção Sobre Mim -->
         <section class="card">
-            <h2> Sobre Mim</h2>
+            <h2>Sobre Mim</h2>
             <p>
                 Amo resolver problemas através do código e estou construindo minha jornada no desenvolvimento web front-end.
             </p>
         </section>
 
         <!-- Post 1 -->
-        <article>
-            <section class="card interact-section">
-                <h2> Interatividade</h2>
+        <article class="card">
+            <section class="interact-section">
+                <h2>Interatividade</h2>
                 <p>Clique no botão abaixo para ver uma mágica acontecer!</p>
                 <button class="btn-fun">CLIQUE!</button>
-                <p class="mensagem-magica hidden"> Você descobriu a mágica!</p>
+                <p class="mensagem-magica hidden">Você descobriu a mágica!</p>
             </section>
 
-            <section class="card">
+            <section class="post-content">
                 <h2>Meu primeiro post</h2>
                 <p class="artigo-autor">Por: lari</p>
                 <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de tecnologia.</p>
-                <img src="imagem-blog.png" alt="logotipo conceitual de tecnologia e educação">
+                
+                <img class="img-blog" src="imagem-blog.png" alt="Logotipo conceitual de tecnologia e educação">
+                
                 <!-- Botões de Reação -->
-                <button class="btn-reacao">️​⭐​<span>0</span></button>
-                <button class="btn-reacao">​👍​ <span>0</span></button>
-                <button class="btn-reacao">❤️​ <span>0</span></button>
+                <div class="skills-tags">
+                    <button class="btn-reacao">⭐ <span>0</span></button>
+                    <button class="btn-reacao">👍 <span>0</span></button>
+                    <button class="btn-reacao">❤️ <span>0</span></button>
+                </div>
             </section>
         </article>
 
         <!-- Post 2 -->
-        <article>
-            <section class="card interact-section">
-                <h2> Interatividade</h2>
+        <article class="card">
+            <section class="interact-section">
+                <h2>Interatividade</h2>
                 <p>Clique no botão abaixo para ver uma mágica acontecer!</p>
                 <button class="btn-fun">CLIQUE!</button>
-                <p class="mensagem-magica hidden"> Você é inteligente!</p>
+                <p class="mensagem-magica hidden">Você é inteligente!</p>
             </section>
 
-            <section class="card">
-                <h2>Meu segundo post</h2>
+            <section class="post-content">
+                <h2>História da Computação</h2>
                 <p class="artigo-autor">Por: lari</p>
-                <p> APROVEITE🙃​! Aqui vou compartilhar sobre curiosidades ⭐​.</p>
-                <img src="Gemini_Generated_Image_29owx029owx029ow.png" alt="logotipo conceitual de tecnologia e educação">
+                <p>
+                    A computação transformou fundamentalmente a sociedade moderna, moldando a forma como trabalhamos, nos comunicamos e resolvemos problemas complexos. Em sua essência, ela é a ciência que estuda o processamento automático de informações por meio de computadores e algoritmos.
+                </p>
+                <p>
+                    O <strong>The National Museum of Computing (TNMOC)</strong>, situado em Bletchley Park no Reino Unido, abriga a maior coleção mundial de computadores históricos funcionais. O espaço oferece uma perspectiva interativa sobre a evolução da computação.
+                </p>
+                
+                <img class="img-blog" src="imagem-blog.png" alt="Logotipo conceitual de tecnologia e educação">
+
                 <!-- Botões de Reação -->
-                <button class="btn-reacao">️​⭐​<span>0</span></button>
-                <button class="btn-reacao">​❤️​<span>0</span></button>
-                <button class="btn-reacao">​👍​<span>0</span></button>
+                <div class="skills-tags">
+                    <button class="btn-reacao">⭐ <span>0</span></button>
+                    <button class="btn-reacao">👍 <span>0</span></button>
+                    <button class="btn-reacao">❤️ <span>0</span></button>
+                </div>
+
+                <p class="fonte">
+                    Fonte: <a href="https://www.tnmoc.org/" target="_blank" rel="noopener noreferrer">The National Museum of Computing</a>
+                </p>
             </section>
         </article>
 
@@ -75,70 +92,43 @@
         <p class="copy">&copy; 2026 - Todos os direitos reservados.</p>
     </footer>
 
-    <!-- Importação limpa do JS -->
+    <!-- Script JS -->
     <script>
-        // É uma boa prática esperar o DOM carregar antes de manipular elementos
         document.addEventListener("DOMContentLoaded", function() {
             console.log("JavaScript carregado com sucesso!");
 
-            // Seleciona todos os botões que têm a classe 'btn-reacao'
-            // Isso é ótimo, pois você tem outros botões que não são de reação!
-            const botoes = document.querySelectorAll(".btn-reacao");
-            console.log("Quantidade de botões de reação encontrados:", botoes.length);
+            // Controle dos botões de reação
+            const botoesReacao = document.querySelectorAll(".btn-reacao");
+            botoesReacao.forEach(function (botao) {
+                let curtiu = false;
 
-            botoes.forEach(function (botao) {
-                let curtiu = false; // Variável para controlar o estado de curtida de CADA botão
+                botao.addEventListener("click", function() {
+                    let texto = botao.querySelector("span");
+                    let contador = parseInt(texto.textContent, 10) || 0;
 
-                // Adiciona o evento de clique a cada botão
-                botao.addEventListener("click", function() { // Usamos uma função anônima aqui, que é equivalente à 'botaoClicado'
-                    console.log("Botão de reação clicado!");
-
-                    let texto = botao.querySelector("span"); // Pega o span dentro do botão
-
-                    if (curtiu === false) { // Se ainda não curtiu
-                        texto.textContent++; // Incrementa o contador
-                        curtiu = true;       // Marca como curtido
-                    } else {                 // Se já curtiu (e clicou novamente para descurtir)
-                        texto.textContent--; // Decrementa o contador
-                        curtiu = false;      // Marca como não curtido
+                    if (!curtiu) {
+                        contador++;
+                        curtiu = true;
+                    } else {
+                        contador--;
+                        curtiu = false;
                     }
+                    texto.textContent = contador;
                 });
             });
 
-            // --- Código para o botão "CLIQUE!" (interatividade) ---
-            // Seção para os botões com a classe 'btn-fun'
+            // Controle dos botões de mágica/interatividade
             const botoesFun = document.querySelectorAll(".btn-fun");
             botoesFun.forEach(function(botaoFun) {
                 botaoFun.addEventListener("click", function() {
-                    // Encontra o parágrafo da mensagem mágica associado a este botão
-                    const mensagemMagica = botaoFun.nextElementSibling; // Pega o próximo irmão do botão
+                    const mensagemMagica = botaoFun.nextElementSibling;
                     if (mensagemMagica && mensagemMagica.classList.contains("mensagem-magica")) {
-                        mensagemMagica.classList.toggle("hidden"); // Alterna a visibilidade
+                        mensagemMagica.classList.toggle("hidden");
                     }
                 });
             });
-            // --- Fim do código para o botão "CLIQUE!" ---
-
-        }); // Fim do DOMContentLoaded
+        });
     </script>
     
 </body>
 </html>
-<article>
-    <img src="imagem-blog.png" 
-         alt="Descrição da imagem para acessibilidade">
-    <div>
-        <h2>Título da Nova Curiosidade</h2>
-        <p class="artigo-autor">Por: Nome do Autor</p>
-        <p>Texto da curiosidade tecnológica aqui.</p>
-        <button>❤️<span>0</span></button>
-        <button>��<span>0</span></button>
-    </div>
-</article>
-<p>
-Primeira parte do texto sobre computação.
-A computação transformou fundamentalmente a sociedade moderna, moldando a forma como trabalhamos, nos comunicamos e resolvemos problemas complexos. Em sua essência, ela é a ciência que estuda o processamento automático de informações por meio de computadores e algoritmos.
-<br><br>
-Segunda parte do texto, que agora aparece em uma nova linha.
-</p>
-<p class=O The National Museum of Computing (TNMOC), situado em Bletchley Park no Reino Unido, abriga a maior coleção mundial de computadores históricos funcionais. O espaço oferece uma perspectiva interativa sobre a evolução da computação, desde os primórdios da criptografia até a era digital. Você pode saber mais visitando o The National Museum of Computing.>Fonte: The National Museum of Computing</p>
